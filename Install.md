@@ -265,3 +265,31 @@ Beside adding the Monk package as a dependency in `package.json`, we also see th
     var db = monk(connection_string);
 
 See the rest of `server.js` for how the database handle `db` is used.
+
+PostgreSQL on OpenShift
+-----------------------
+
+There's another template for apps using PostgreSQL.
+
+    rhc app-create mypostgres nodejs postgresql-9.2 --from-code https://github.com/6170-fa14/openshift-postgres
+
+Now the `server.js` magic looks like:
+
+    var pg = require('pg');
+
+    var connection_string = 'postgres://' + process.env.USER + '@localhost/mytest';
+
+    if (process.env.OPENSHIFT_POSTGRESQL_DB_PASSWORD) {
+      connection_string = process.env.OPENSHIFT_POSTGRESQL_DB_USERNAME + ':' +
+            process.env.OPENSHIFT_POSTGRESQL_DB_PASSWORD + '@' +
+            process.env.OPENSHIFT_POSTGRESQL_DB_HOST + ':' +
+            process.env.OPENSHIFT_POSTGRESQL_DB_PORT + '/mypostgres';
+    }
+
+    var db = new pg.Client(connection_string);
+
+To enable the local-machine version, it's helpful to tell your local Postgres server to allow passwordless authentication, for any connection from the local machine.  Such an effect can be accomplished by adding the following line to the end of a file in a location like `/etc/postgresql/9.1/main/pg_hba.conf`:
+
+    host    all             all             127.0.0.1/32            trust
+
+**To do: explain how to create database on OpenShift.**
