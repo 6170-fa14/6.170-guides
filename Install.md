@@ -65,7 +65,7 @@ Express
       },
 
       "dependencies": {
-        "express": "~3.4.4"
+        "express": ">= 4.0.0"
       }
     }
 
