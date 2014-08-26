@@ -6,6 +6,24 @@ Preliminaries
 Some sort of text editor or IDE will be essential for editing code in 6.170.  There are the classic UNIX text editors Emacs and Vi, available for nearly all platforms.  Certainly getting experience with these helps build street cred among developer! `:-)`  Tools with shorter learning curves (but probably also supporting less efficient use by experts) include [Sublime Text](http://www.sublimetext.com/).  In non-UNIX platforms, a variety of tools can be helpful, like the fancy text-console program [iTerm](http://iterm.sourceforge.net/) for Mac OS X.
 
 
+JavaScript debugging
+====================
+
+We'll assume each of you has a web browser installed, which means you're already set up to run JavaScript code!  For instance, if you've put some JavaScript within an HTML file found in `/home/you/file.html` on a Linux system, then you should be able to visit it in your browser at URL:
+
+    file:///home/you/file.html
+
+As a quick test, you could try these file contents:
+
+    <html><body>
+      <script language="text/javascript">alert("It worked!")</script>
+    </body></html>
+
+Many of you may be unfamiliar with the JavaScript debugging tools provided by modern web browsers.  We recommend the tools within Chrome and Firefox in particular.
+
+**Need to decide what else to say here.  I'm not an expert on JavaScript debugging in either browser.**
+
+
 GitHub
 ======
 
