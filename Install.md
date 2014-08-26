@@ -239,3 +239,29 @@ We've also made the last line of `server.js` a bit fancier:
                process.env.OPENSHIFT_NODEJS_IP);
 
 This file is coded to allow the app to run correctly both on your local machine and on OpenShift's servers.  If the app is started on OpenShift, two environment variables `OPENSHIFT_NODEJS_PORT` and `OPENSHIFT_NODEJS_IP` will be set, explaining which port and IP address to listen on.  We presume that these variables are *not* set in your local development environment!  Therefore, if they are set, we must be on OpenShift, and we should use them; and if they are not set, we should use appropriate local defaults.  (Feel free to fiddle with those defaults, if you like.)  The `||` operator is a handy way of picking a particular value, if it is defined; or going with a default value otherwise.  In this case, we pick 8080 as the default port to run a web server on.
+
+MongoDB on OpenShift
+--------------------
+
+A different template repository is helpful to create applications that use MongoDB via the Monk NPM package.
+
+    rhc app-create mymongo nodejs mongodb-2.4 --from-code https://github.com/6170-fa14/openshift-mongodb
+
+This template application should run both locally and on OpenShift.  Each page hit adds a new entry to the database and displays all the entries so far.
+
+Beside adding the Monk package as a dependency in `package.json`, we also see the following logic in `server.js`, to initiate the MongoDB connection correctly, on either your local machine or OpenShift, where `mymongo` is the database name chosen by OpenShift, based on the app name:
+
+    var monk = require('monk');
+
+    var connection_string = 'localhost/mymongo';
+
+    if (process.env.OPENSHIFT_MONGODB_DB_PASSWORD) {
+      connection_string = process.env.OPENSHIFT_MONGODB_DB_USERNAME + ':' +
+            process.env.OPENSHIFT_MONGODB_DB_PASSWORD + '@' +
+            process.env.OPENSHIFT_MONGODB_DB_HOST + ':' +
+            process.env.OPENSHIFT_MONGODB_DB_PORT + '/mymongo';
+    }
+
+    var db = monk(connection_string);
+
+See the rest of `server.js` for how the database handle `db` is used.
