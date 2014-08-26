@@ -151,3 +151,44 @@ Once MongoDB is installed properly, you should be able to replicate this small e
     >
 
 (Finish by typing something like *control-D* to end the session.)
+
+
+PostgreSQL
+==========
+
+[PostgreSQL](http://www.postgresql.org/) is a representative of a more traditional class of *relational* database engines based on a language family called SQL.  In 6.170, we will also use it to illustrate richer sorts of database designs.  **Or will we?**
+
+The PostgreSQL web site has a [a page of downloading instructions](http://www.postgresql.org/download/).
+
+In Debian-flavored Linux, installation just requires running:
+
+    sudo apt-get install postgresql
+
+Simple acceptance test
+----------------------
+
+After proper installation, you should have a database server running locally.  To test it from a UNIX-style command-line interface, try the following.  The `#` lines are comments and shouldn't be run.
+
+    # First, create a PostgreSQL account for your UNIX user.
+    # It's necessary to become the database admin user to do so.
+    $ sudo -u postgres createuser --createdb --no-superuser --no-createrole `whoami`
+    # Now create a database, as your own user.
+    $ createdb mytest
+    # Open a command-line connection to your database.
+    $ psql mytest
+    psql (9.1.14)
+    Type "help" for help.
+    
+    # Now a quick interaction to make sure everything is working.
+    mytest=> CREATE TABLE foo (baz INTEGER, bar TEXT);
+    CREATE TABLE
+    mytest=> INSERT INTO foo (baz, bar) VALUES (1, 'ABC');
+    INSERT 0 1
+    mytest=> SELECT * FROM foo;
+     baz | bar 
+    -----+-----
+       1 | ABC
+    (1 row)
+
+    mytest=> 
+    # End session with control-D.
