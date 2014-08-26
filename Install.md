@@ -122,3 +122,32 @@ Your boring web site should be accessible in a local web browser at this URL:
     http://localhost:8080/
 
 You'll want to kill the server after you finish testing, probably by typing *control-C*.
+
+
+MongoDB
+=======
+
+[MongoDB](http://www.mongodb.org/) is a popular document-oriented database system with a simple interface.  We'll use it in the first database-related project, and it could be reasonable to use in your final team project.
+
+The MongoDB web site has installation instructions for Linux ([Ubuntu](http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/) and [Debian](http://docs.mongodb.org/manual/tutorial/install-mongodb-on-debian/)), [Max OS X](http://docs.mongodb.org/manual/tutorial/install-mongodb-on-os-x/), and [Windows](http://docs.mongodb.org/manual/tutorial/install-mongodb-on-windows/).
+
+In Debian-flavored Linux, at least, installation is as easy as a single command line:
+
+    sudo apt-get install mongodb
+
+You might end up with a slightly out-of-date version, but that shouldn't matter much for 6.170 this term.
+
+Simple acceptance test
+----------------------
+
+Once MongoDB is installed properly, you should be able to replicate this small example interaction at the command line:
+
+    $ mongo
+    MongoDB shell version: 2.0.4
+    connecting to: test
+    > db.foo.insert({baz:1, bar:"ABC"});
+    > db.foo.find();
+    { "_id" : ObjectId("53fcd2e46484d6bbd123378c"), "baz" : 1, "bar" : "ABC" }
+    >
+
+(Finish by typing something like *control-D* to end the session.)
