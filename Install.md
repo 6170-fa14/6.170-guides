@@ -240,6 +240,8 @@ We've also made the last line of `server.js` a bit fancier:
 
 This file is coded to allow the app to run correctly both on your local machine and on OpenShift's servers.  If the app is started on OpenShift, two environment variables `OPENSHIFT_NODEJS_PORT` and `OPENSHIFT_NODEJS_IP` will be set, explaining which port and IP address to listen on.  We presume that these variables are *not* set in your local development environment!  Therefore, if they are set, we must be on OpenShift, and we should use them; and if they are not set, we should use appropriate local defaults.  (Feel free to fiddle with those defaults, if you like.)  The `||` operator is a handy way of picking a particular value, if it is defined; or going with a default value otherwise.  In this case, we pick 8080 as the default port to run a web server on.
 
+Remember that you'll need to run `npm install` to prepare to run your application locally, before running `node server.js`.
+
 MongoDB on OpenShift
 --------------------
 
@@ -280,7 +282,7 @@ Now the `server.js` magic looks like:
     var connection_string = 'postgres://' + process.env.USER + '@localhost/mytest';
 
     if (process.env.OPENSHIFT_POSTGRESQL_DB_PASSWORD) {
-      connection_string = process.env.OPENSHIFT_POSTGRESQL_DB_USERNAME + ':' +
+      connection_string = 'postgres://' + process.env.OPENSHIFT_POSTGRESQL_DB_USERNAME + ':' +
             process.env.OPENSHIFT_POSTGRESQL_DB_PASSWORD + '@' +
             process.env.OPENSHIFT_POSTGRESQL_DB_HOST + ':' +
             process.env.OPENSHIFT_POSTGRESQL_DB_PORT + '/mypostgres';
@@ -292,4 +294,26 @@ To enable the local-machine version, it's helpful to tell your local Postgres se
 
     host    all             all             127.0.0.1/32            trust
 
-**To do: explain how to create database on OpenShift.**
+It will also be necessary to set up the remote database, before the OpenShift version of the application will run properly.  We need to duplicate the setup we did locally for the `mytest` database in an earlier step.  We can get a shell session on the OpenShift servers by running:
+
+    rhc ssh mypostgres
+
+This command should work straight away in Linux, but more work may be needed on other platforms.  OpenShift has [instructions for connecting on Windows with the PuTTY SSH client](https://www.openshift.com/developers/install-and-setup-putty-ssh-client-for-windows).
+
+Once connected, we just need to repeat the command sequence from before:
+
+    > psql mypostgres
+    psql (9.2.8)
+    Type "help" for help.
+
+    mypostgres=# CREATE TABLE foo (baz INTEGER, bar TEXT);
+    CREATE TABLE
+    mypostgres=# INSERT INTO foo (baz, bar) VALUES (1, 'ABC');
+    INSERT 0 1
+    mypostgres=# SELECT * FROM foo;
+     baz | bar 
+    -----+-----
+       1 | ABC
+    (1 row)
+
+We finish with *control-D* like before.  Now your application should be accessible at the URL printed at the end of the output of the `rhc app-create` command.
