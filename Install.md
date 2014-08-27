@@ -3,7 +3,7 @@ This guide explains how to install all of the programming tools for 6.170 on you
 Preliminaries
 =============
 
-Some sort of text editor or IDE will be essential for editing code in 6.170.  There are the classic UNIX text editors Emacs and Vi, available for nearly all platforms.  Certainly getting experience with these helps build street cred among developer! `:-)`  Tools with shorter learning curves (but probably also supporting less efficient use by experts) include [Sublime Text](http://www.sublimetext.com/).  In non-UNIX platforms, a variety of tools can be helpful, like the fancy text-console program [iTerm](http://iterm.sourceforge.net/) for Mac OS X.
+Some sort of text editor or IDE will be essential for editing code in 6.170.  There are the classic UNIX text editors Emacs and Vi, available for nearly all platforms.  Certainly getting experience with these editors helps build street cred among developers!  Tools with shorter learning curves (but probably also supporting less efficient use by experts) include [Sublime Text](http://www.sublimetext.com/).  On non-UNIX platforms, a variety of tools can be helpful, like the fancy text-console program [iTerm](http://iterm.sourceforge.net/) for Mac OS X.
 
 
 JavaScript debugging
@@ -78,7 +78,7 @@ Express
       },
 
       "engines": {
-        "node": ">= 0.30.0",
+        "node": ">= 0.10.30",
         "npm": ">= 1.0.0"
       },
 
@@ -87,7 +87,7 @@ Express
       }
     }
 
-This configuration file is written as an object in [JSON](http://json.org/), a JavaScript-based format for structured, untyped data.  The first two lines give basic metadata about the project.  The `repository` section explains where to grab the source for the project.  (Here we've used the repository containing this document, which isn't actually where the source for the project will be found!)  The last sections, `engines` and `dependencies`, gives constraints on the acceptable versions of Node, NPM, and Express.
+This configuration file is written as an object in [JSON](http://json.org/), a JavaScript-based format for structured, untyped data.  The first two lines give basic metadata about the project.  The `repository` section explains where to grab the source for the project.  (Here we've used the repository containing this document, which isn't actually where the source for the project will be found!)  The last sections, `engines` and `dependencies`, give constraints on the acceptable versions of Node, NPM, and Express.
 
 To satisfy NPM, also create a file `README.md` in the same directory.  It doesn't matter what's there now; it can be empty, but in a real project it would provide some kind of introduction and documentation.  (GitHub wants to see `README.md` files, too.  They're written in a syntax format called [Markdown](https://help.github.com/articles/github-flavored-markdown).)
 
@@ -197,7 +197,7 @@ After proper installation, you should have a database server running locally.  T
 OpenShift
 =========
 
-At some point, you will want to deploy your applications on a server somewhere, so that all the world can access them!  We'll ask you to deploy somewhere for testing by the TAs for grading purposes.  You're free to deploy anywhere you want that leads to a publically accessible web site, but the 6.170 staff are supporting the [OpenShift](https://www.openshift.com/) platform this term.
+At some point, you will want to deploy your applications on a server somewhere, so that all the world can access them!  We'll ask you to deploy somewhere for testing by the TAs for grading purposes.  You're free to deploy anywhere you want that leads to a publicly accessible web site, but the 6.170 staff are supporting the [OpenShift](https://www.openshift.com/) platform this term.
 
 To use OpenShift, first you'll want to [create an account on the web](https://www.openshift.com/app/account/new).  Now you have some choices about how to *use* your account.  There is a web-based deployment interface on the OpenShift site, and there is also an Eclipse plug-in.  This document will instead explain the command-line interface, based on a program called `rhc`.
 
@@ -207,6 +207,7 @@ First, [install the command-line tools](https://www.openshift.com/developers/rhc
 
 You'll be prompted for:
 
+* an OpenShift server name (just accept the default without entering anything)
 * your OpenShift username and password
 * whether you want to generate a token and/or upload an SSH key (say "yes" to both unless you really know what you're doing)
 * a choice of a namespace, which is text that appears in the URL for each of your hosted apps (something close to your Athena username will be helpful to our TAs!)
@@ -294,7 +295,7 @@ To enable the local-machine version, it's helpful to tell your local Postgres se
 
     host    all             all             127.0.0.1/32            trust
 
-It will also be necessary to set up the remote database, before the OpenShift version of the application will run properly.  We need to duplicate the setup we did locally for the `mytest` database in an earlier step.  We can get a shell session on the OpenShift servers by running:
+It will also be necessary to set up the remote database, before the OpenShift version of the application will run properly.  We need to duplicate the setup we did locally for the `mytest` database in an earlier step.  We can get a shell session on the OpenShift server by running:
 
     rhc ssh mypostgres
 
