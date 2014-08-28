@@ -3,7 +3,7 @@ This guide explains how to install all of the programming tools for 6.170 on you
 Preliminaries
 =============
 
-Some sort of text editor or IDE will be essential for editing code in 6.170.  There are the classic UNIX text editors Emacs and Vi, available for nearly all platforms.  Certainly getting experience with these editors helps build street cred among developers!  Tools with shorter learning curves (but probably also supporting less efficient use by experts) include [Sublime Text](http://www.sublimetext.com/).  On non-UNIX platforms, a variety of tools can be helpful, like the fancy text-console program [iTerm](http://iterm.sourceforge.net/) for Mac OS X.
+Some sort of text editor or IDE will be essential for editing code in 6.170.  There are the classic UNIX text editors Emacs and Vi, available for nearly all platforms.  Certainly getting experience with these editors helps build street cred among developers!  Tools with shorter learning curves include, for Mac OS X, [BBEdit](http://www.barebones.com/products/bbedit/), [Sublime Text](http://www.sublimetext.com/), and [TextMate](http://macromates.com/) (the last of which includes bundles for JavaScript, jQuery, etc., that provide templates for common idioms and give API documentation for highlighted elements); and for Windows, **something**.  On non-UNIX platforms, a variety of tools can be helpful, like the fancy text-console program [iTerm](http://iterm.sourceforge.net/) for Mac OS X.
 
 
 JavaScript debugging
@@ -20,8 +20,6 @@ As a quick test, you could try these file contents:
     </body></html>
 
 Many of you may be unfamiliar with the JavaScript debugging tools provided by modern web browsers.  We recommend the tools [for Chrome](https://developer.chrome.com/devtools) and [for Firefox](https://getfirebug.com) in particular.
-
-**Need to decide what else to say here.  I'm not an expert on JavaScript debugging in either browser.**
 
 
 GitHub
