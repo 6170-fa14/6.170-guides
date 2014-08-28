@@ -19,7 +19,7 @@ As a quick test, you could try these file contents:
       <script language="text/javascript">alert("It worked!")</script>
     </body></html>
 
-Many of you may be unfamiliar with the JavaScript debugging tools provided by modern web browsers.  We recommend the tools within Chrome and Firefox in particular.
+Many of you may be unfamiliar with the JavaScript debugging tools provided by modern web browsers.  We recommend the tools [for Chrome](https://developer.chrome.com/devtools) and [for Firefox](https://getfirebug.com) in particular.
 
 **Need to decide what else to say here.  I'm not an expert on JavaScript debugging in either browser.**
 
