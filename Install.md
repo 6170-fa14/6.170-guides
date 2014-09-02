@@ -58,7 +58,7 @@ We'll be using [GitHub](http://github.com/) for official project hand-in, and we
 
 For each project we'll create a repository for you with a name like `<your_kerberos_name>_<project_name>`. You should receive an email once the repository has been created. You should then clone your repository to your local machine like this:
 
-    $ git clone git://github.com/6170-fa14/<your_kerberos_name>_<project_name>.git
+    $ git clone https://github.com/6170-fa14/<your_kerberos_name>_<project_name>.git
 
 For project hand-in we'll ask you to fill out a Google form on the Stellar site with the GitHub commit URL that you'd like us to grade. The URL should be of the form: `https://github.com/6170-fa14/<your_kerberos_name>_<project_name>/tree/<commit-sha1>`. You can retrieve this URL by going to the appropriate branch of your repository on GitHub, clicking on the "# commits" button in the top left, finding the correct commit, and then clicking on the "Browse your code at this point in history" <> button on the right side of the commit line. The commit URL we want will be the URL of this page.
 
