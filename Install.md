@@ -189,7 +189,9 @@ Once MongoDB is installed properly, you should be able to replicate this small e
 PostgreSQL
 ==========
 
-[PostgreSQL](http://www.postgresql.org/) is a representative of a more traditional class of *relational* database engines based on a language family called SQL.  In 6.170, we will also use it to illustrate richer sorts of database designs.  **Or will we?**
+**This section is optional.  We won't require PostgreSQL for any of the projects, but you may want to consider it for your final project!**
+
+[PostgreSQL](http://www.postgresql.org/) is a representative of a more traditional class of *relational* database engines based on a language family called SQL.
 
 The PostgreSQL web site has a [a page of downloading instructions](http://www.postgresql.org/download/).
 
@@ -304,6 +306,8 @@ See the rest of `server.js` for how the database handle `db` is used.
 
 PostgreSQL on OpenShift
 -----------------------
+
+**This section is also optional, in case you decide to use PostgreSQL in your final project.**
 
 There's another template for apps using PostgreSQL.
 
