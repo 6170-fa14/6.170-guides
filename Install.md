@@ -32,13 +32,17 @@ Git
 *For Windows Users:* download the installer from http://msysgit.github.io and run it
 
 *For MAC and Linux Users:* check if you already have Git installed by running the command
+    
     $ which git
 
 If you do not have Git and are using OS X, install it:
+    
     $ brew install git
+
 Note: If you don’t have brew, install Homebrew http://brew.sh/
 
 If you do not have Git and are using Ubuntu, install it:
+    
     $ sudo apt-get install git
 
 If these options don’t work out for you, there is also the official Git site which has installation instructions. http://git-scm.com/book/en/Getting-Started-Installing-Git
