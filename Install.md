@@ -31,14 +31,22 @@ Git
 
 *For Windows Users:* download the installer from http://msysgit.github.io and run it
 
+*For MAC and Linux Users:* check if you already have Git installed by running the command
+    $ which git
 
-*For MAC and Linux Users:* check if you already have Git installed by running the command:`$ which git`
+If you do not have Git and are using OS X, install it:
+    $ brew install git
+Note: If you don’t have brew, install Homebrew http://brew.sh/
 
-If you do not have Git and are using OS X, install it: `$ brew install git`. Note: If you don’t have brew, install Homebrew http://brew.sh/
-
-If you do not have Git and are using Ubuntu, install it: `$ sudo apt-get install git`
+If you do not have Git and are using Ubuntu, install it:
+    $ sudo apt-get install git
 
 If these options don’t work out for you, there is also the official Git site which has installation instructions. http://git-scm.com/book/en/Getting-Started-Installing-Git
+
+After installing Git you'll also want to tell it your name and email address so your commits contain that information:
+    
+    $ git config --global user.name "Your Name"
+    $ git config --global user.email "you@mit.edu"
 
 GitHub
 ------
@@ -46,7 +54,7 @@ We'll be using [GitHub](http://github.com/) for official project hand-in, and we
 
 For each project we'll create a repository for you with a name like `<your_kerberos_name>_<project_name>`. You should receive an email once the repository has been created. You should then clone your repository to your local machine like this:
 
-`$ git clone git://github.com/6170-fa14/<your_kerberos_name>_<project_name>.git`
+    $ git clone git://github.com/6170-fa14/<your_kerberos_name>_<project_name>.git
 
 For project hand-in we'll ask you to fill out a Google form on the Stellar site with the GitHub commit URL that you'd like us to grade. The URL should be of the form: `https://github.com/6170-fa14/<your_kerberos_name>_<project_name>/tree/<commit-sha1>`. You can retrieve this URL by going to the appropriate branch of your repository on GitHub, clicking on the "# commits" button in the top left, finding the correct commit, and then clicking on the "Browse your code at this point in history" <> button on the right side of the commit line. The commit URL we want will be the URL of this page.
 
