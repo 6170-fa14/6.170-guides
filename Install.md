@@ -60,7 +60,11 @@ For each project we'll create a repository for you with a name like `<your_kerbe
 
     $ git clone https://github.com/6170-fa14/<your_kerberos_name>_<project_name>.git
 
-For project hand-in we'll ask you to fill out a Google form on the Stellar site with the GitHub commit URL that you'd like us to grade. The URL should be of the form: `https://github.com/6170-fa14/<your_kerberos_name>_<project_name>/tree/<commit-sha1>`. You can retrieve this URL by going to the appropriate branch of your repository on GitHub, clicking on the "# commits" button in the top left, finding the correct commit, and then clicking on the "Browse your code at this point in history" <> button on the right side of the commit line. The commit URL we want will be the URL of this page.
+For project hand-in we'll ask you to fill out a Google form on the Stellar site with the GitHub commit URL that you'd like us to grade. The URL should be of the form:
+
+    https://github.com/6170-fa14/<your_kerberos_name>_<project_name>/tree/<commit-sha1>
+    
+You can retrieve this URL by going to the appropriate branch of your repository on GitHub, clicking on the "# commits" button in the top left, finding the correct commit, and then clicking on the "Browse your code at this point in history" <> button on the right side of the commit line. The commit URL we want will be the URL of this page.
 
 Please make sure that you have created a GitHub account and set up Git on your machine before the first recitation.
 
