@@ -22,12 +22,35 @@ As a quick test, you could try these file contents:
 Many of you may be unfamiliar with the JavaScript debugging tools provided by modern web browsers.  We recommend the tools [for Chrome](https://developer.chrome.com/devtools) and [for Firefox](https://getfirebug.com) in particular.  Another useful service is [JSFiddle](http://jsfiddle.net/), for running JavaScript out of a text box within a web page.
 
 
-GitHub
+Git and GitHub
 ======
 
-[Git](http://git-scm.com/) is a distributed version control system.  That is, it's a *version control system*, which helps groups of programmers maintain a shared history of a set of files, resolve conflicting changes to files, and so on; and it's *distributed*, because it does not have a required concept of a central server storing the "one true history" of a project.  These days, 6.005 is using Git, so we'll assume most of you have seen it before.  Some [notes on version control from 6.005](https://stellar.mit.edu/S/course/6/fa12/6.005/courseMaterial/topics/topic2/lectureNotes/L13-version-control/L14-version-control.pdf) might be helpful as a refresher.
+[Git](http://git-scm.com/) is a distributed version control system.  That is, it's a *version control system*, which helps groups of programmers maintain a shared history of a set of files, resolve conflicting changes to files, and so on; and it's *distributed*, because it does not have a required concept of a central server storing the "one true history" of a project.  These days, 6.005 is using Git, so we'll assume most of you have seen it before. However, here are some installation instructions in case you don't have Git on your computer:
 
-We'll be using [GitHub](http://github.com/) for official project hand-in, and we recommend using it to coordinate your project work as well, both for individual and team projects.  GitHub is a free Git hosting service that is very popular for open-source projects.  [GitHub's guide to setting up Git](https://help.github.com/articles/set-up-git#setting-up-git) may be helpful.
+*For Windows Users*
+Download the installer from http://code.google.com/p/msysgit and run it
+
+*For MAC and Linux Users*
+Check if you already have Git installed by running the command:
+`$ which git`
+
+If you do not have Git and are using OS X, install it:
+`$ brew install git`
+Note: If you don’t have brew, install Homebrew http://brew.sh/
+
+If you do not have Git and are using Ubuntu, install it:
+`$ sudo apt-get install git`
+
+If these options don’t work out for you, there is also the official Git site which has installation instructions. http://git-scm.com/book/en/Getting-Started-Installing-Git
+
+Some [notes on version control and Git from 6.005](https://stellar.mit.edu/S/course/6/fa12/6.005/courseMaterial/topics/topic2/lectureNotes/L13-version-control/L14-version-control.pdf) might be helpful as a refresher.
+
+We'll be using [GitHub](http://github.com/) for official project hand-in, and we recommend using it to coordinate your project work as well, both for individual and team projects.  GitHub is a free Git hosting service that is very popular for open-source projects.
+
+For each project we'll create a repository for you with a name like `<your_kerberos_name>_<project_name>`. You should receive an email once the repository has been created. You should then clone your repository to your local machine like this:
+`$ git clone git://github.com/6170-fa14/<your_kerberos_name>_<project_name>.git`.
+
+Please make sure that you have created a GitHub account and set up Git on your machine before the first recitation.
 
 
 Node.js
