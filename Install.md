@@ -29,7 +29,7 @@ Git
 ---
 [Git](http://git-scm.com/) is a distributed version control system.  That is, it's a *version control system*, which helps groups of programmers maintain a shared history of a set of files, resolve conflicting changes to files, and so on; and it's *distributed*, because it does not have a required concept of a central server storing the "one true history" of a project.  These days, 6.005 is using Git, so we'll assume most of you have seen it before. Some [notes on version control and Git from 6.005](https://stellar.mit.edu/S/course/6/fa12/6.005/courseMaterial/topics/topic2/lectureNotes/L13-version-control/L14-version-control.pdf) might be helpful as a refresher. Additionally, here are some installation instructions in case you don't have Git on your computer:
 
-*For Windows Users:* download the installer from http://msysgit.github.io and run it
+*For Windows Users:* download the [installer](http://msysgit.github.io) and run it
 
 *For MAC and Linux Users:* check if you already have Git installed by running the command
     
@@ -39,13 +39,13 @@ If you do not have Git and are using OS X, install it:
     
     $ brew install git
 
-Note: If you don’t have brew, install Homebrew http://brew.sh/
+Note: If you don’t have brew, install [Homebrew](http://brew.sh/)
 
 If you do not have Git and are using Ubuntu, install it:
     
     $ sudo apt-get install git
 
-If these options don’t work out for you, there is also the official Git site which has installation instructions. http://git-scm.com/book/en/Getting-Started-Installing-Git
+If these options don’t work out for you, there is also the official Git site which has [installation instructions](http://git-scm.com/book/en/Getting-Started-Installing-Git).
 
 After installing Git you'll also want to tell it your name and email address so your commits contain that information:
     
