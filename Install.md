@@ -25,7 +25,7 @@ Many of you may be unfamiliar with the JavaScript debugging tools provided by mo
 Git and GitHub
 ======
 
-[Git](http://git-scm.com/) is a distributed version control system.  That is, it's a *version control system*, which helps groups of programmers maintain a shared history of a set of files, resolve conflicting changes to files, and so on; and it's *distributed*, because it does not have a required concept of a central server storing the "one true history" of a project.  These days, 6.005 is using Git, so we'll assume most of you have seen it before. However, here are some installation instructions in case you don't have Git on your computer:
+[Git](http://git-scm.com/) is a distributed version control system.  That is, it's a *version control system*, which helps groups of programmers maintain a shared history of a set of files, resolve conflicting changes to files, and so on; and it's *distributed*, because it does not have a required concept of a central server storing the "one true history" of a project.  These days, 6.005 is using Git, so we'll assume most of you have seen it before. Some [notes on version control and Git from 6.005](https://stellar.mit.edu/S/course/6/fa12/6.005/courseMaterial/topics/topic2/lectureNotes/L13-version-control/L14-version-control.pdf) might be helpful as a refresher. Additionally, here are some installation instructions in case you don't have Git on your computer:
 
 *For Windows Users*
 Download the installer from http://code.google.com/p/msysgit and run it
@@ -43,12 +43,11 @@ If you do not have Git and are using Ubuntu, install it:
 
 If these options don’t work out for you, there is also the official Git site which has installation instructions. http://git-scm.com/book/en/Getting-Started-Installing-Git
 
-Some [notes on version control and Git from 6.005](https://stellar.mit.edu/S/course/6/fa12/6.005/courseMaterial/topics/topic2/lectureNotes/L13-version-control/L14-version-control.pdf) might be helpful as a refresher.
-
 We'll be using [GitHub](http://github.com/) for official project hand-in, and we recommend using it to coordinate your project work as well, both for individual and team projects.  GitHub is a free Git hosting service that is very popular for open-source projects.
 
 For each project we'll create a repository for you with a name like `<your_kerberos_name>_<project_name>`. You should receive an email once the repository has been created. You should then clone your repository to your local machine like this:
 `$ git clone git://github.com/6170-fa14/<your_kerberos_name>_<project_name>.git`.
+For project hand-in we'll ask you to fill out a Google form on the Stellar site with the GitHub commit URL that you'd like us to grade. The URL should be of the form: https://github.com/6170-fa14/<your_kerberos_name>_<project_name>/tree/<commit-sha1>. You can retrieve this URL by going to the appropriate branch of your repository on GitHub, clicking on the "# commits" button in the top left, finding the correct commit, and then clicking on the "Browse your code at this point in history" <> button on the right side of the commit line. The commit URL we want will be the URL of this page.
 
 Please make sure that you have created a GitHub account and set up Git on your machine before the first recitation.
 
