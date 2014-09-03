@@ -3,7 +3,7 @@ This guide explains how to install all of the programming tools for 6.170 on you
 Preliminaries
 =============
 
-Some sort of text editor or IDE will be essential for editing code in 6.170.  There are the classic UNIX text editors Emacs and Vi, available for nearly all platforms.  Certainly getting experience with these editors helps build street cred among developers!  Tools with shorter learning curves include, for Mac OS X, [BBEdit](http://www.barebones.com/products/bbedit/), [Sublime Text](http://www.sublimetext.com/), and [TextMate](http://macromates.com/) (the last of which includes bundles for JavaScript, jQuery, etc., that provide templates for common idioms and give API documentation for highlighted elements); and for Windows, **something**.  On non-UNIX platforms, a variety of tools can be helpful, like the fancy text-console program [iTerm](http://iterm.sourceforge.net/) for Mac OS X.
+Some sort of text editor or IDE will be essential for editing code in 6.170.  There are the classic UNIX text editors Emacs and Vi, available for nearly all platforms.  Certainly getting experience with these editors helps build street cred among developers!  Tools with shorter learning curves include, for Mac OS X, [BBEdit](http://www.barebones.com/products/bbedit/), [Sublime Text](http://www.sublimetext.com/), and [TextMate](http://macromates.com/) (the last of which includes bundles for JavaScript, jQuery, etc., that provide templates for common idioms and give API documentation for highlighted elements); and [Sublime Text](http://www.sublimetext.com/) is also available for Windows.  On non-UNIX platforms, a variety of tools can be helpful, like the fancy text-console program [iTerm](http://iterm.sourceforge.net/) for Mac OS X.
 
 
 JavaScript debugging
@@ -27,27 +27,27 @@ Git and GitHub
 
 Git
 ---
-[Git](http://git-scm.com/) is a distributed version control system.  That is, it's a *version control system*, which helps groups of programmers maintain a shared history of a set of files, resolve conflicting changes to files, and so on; and it's *distributed*, because it does not have a required concept of a central server storing the "one true history" of a project.  These days, 6.005 is using Git, so we'll assume most of you have seen it before. Some [notes on version control and Git from 6.005](https://stellar.mit.edu/S/course/6/fa12/6.005/courseMaterial/topics/topic2/lectureNotes/L13-version-control/L14-version-control.pdf) might be helpful as a refresher. Additionally, here are some installation instructions in case you don't have Git on your computer:
+[Git](http://git-scm.com/) is a distributed version control system.  That is, it's a *version control system*, which helps groups of programmers maintain a shared history of a set of files, resolve conflicting changes to files, and so on; and it's *distributed*, because it does not have a required concept of a central server storing the "one true history" of a project.  These days, 6.005 is using Git, so we'll assume most of you have seen it before. Some [notes on version control and Git from 6.005](https://stellar.mit.edu/S/course/6/fa12/6.005/courseMaterial/topics/topic2/lectureNotes/L13-version-control/L14-version-control.pdf) might be helpful as a refresher.  We'll also provide some Git installation instructions here.
 
-*For Windows Users:* download the [installer](http://msysgit.github.io) and run it
+There is a convenient [installer](http://msysgit.github.io) available for Windows.
 
-*For MAC and Linux Users:* check if you already have Git installed by running the command
+Mac and Linux users can check if Git is installed with the command
     
     $ which git
 
-If you do not have Git and are using OS X, install it:
+If that command line doesn't find Git, then OS X users can install it via:
     
     $ brew install git
 
-Note: If you don’t have brew, install [Homebrew](http://brew.sh/)
+(This command line uses [Homebrew](http://brew.sh/), a freely available package manager for OS X.)
 
-If you do not have Git and are using Ubuntu, install it:
+Users of Ubuntu and other Debian-flavored Linux distributions can run this command line.
     
     $ sudo apt-get install git
 
-If these options don’t work out for you, there is also the official Git site which has [installation instructions](http://git-scm.com/book/en/Getting-Started-Installing-Git).
+The [installation instructions](http://git-scm.com/book/en/Getting-Started-Installing-Git) on the official Git site may be helpful, in case our advice here proves insufficient.
 
-After installing Git you'll also want to tell it your name and email address so your commits contain that information:
+After installing Git, you'll also want to tell it your name and e-mail address, to include in commit logs:
     
     $ git config --global user.name "Your Name"
     $ git config --global user.email "you@mit.edu"
@@ -56,7 +56,7 @@ GitHub
 ------
 We'll be using [GitHub](http://github.com/) for official project hand-in, and we recommend using it to coordinate your project work as well, both for individual and team projects.  GitHub is a free Git hosting service that is very popular for open-source projects.
 
-For each project we'll create a repository for you with a name like `<your_kerberos_name>_<project_name>`. You should receive an email once the repository has been created. You should then clone your repository to your local machine like this:
+For each project we'll create a repository for you with a name like `<your_kerberos_name>_<project_name>`. You should receive an e-mail message once the repository has been created. You should then clone your repository to your local machine like this:
 
     $ git clone https://github.com/6170-fa14/<your_kerberos_name>_<project_name>.git
 
@@ -190,47 +190,6 @@ Once MongoDB is installed properly, you should be able to replicate this small e
 (Finish by typing something like *control-D* to end the session.)
 
 
-PostgreSQL
-==========
-
-**This section is optional.  We won't require PostgreSQL for any of the projects, but you may want to consider it for your final project!**
-
-[PostgreSQL](http://www.postgresql.org/) is a representative of a more traditional class of *relational* database engines based on a language family called SQL.
-
-The PostgreSQL web site has a [a page of downloading instructions](http://www.postgresql.org/download/).
-
-In Debian-flavored Linux, installation just requires running:
-
-    sudo apt-get install postgresql
-
-Simple acceptance test
-----------------------
-
-After proper installation, you should have a database server running locally.  To test it from a UNIX-style command-line interface, try the following.  The `#` lines are comments and shouldn't be run.
-
-    # First, create a PostgreSQL account for your UNIX user.
-    # It's necessary to become the database admin user to do so.
-    $ sudo -u postgres createuser --createdb --no-superuser --no-createrole `whoami`
-    # Now create a database, as your own user.
-    $ createdb mytest
-    # Open a command-line connection to your database.
-    $ psql mytest
-    psql (9.1.14)
-    Type "help" for help.
-    
-    # Now a quick interaction to make sure everything is working.
-    mytest=> CREATE TABLE foo (baz INTEGER, bar TEXT);
-    CREATE TABLE
-    mytest=> INSERT INTO foo (baz, bar) VALUES (1, 'ABC');
-    INSERT 0 1
-    mytest=> SELECT * FROM foo;
-     baz | bar 
-    -----+-----
-       1 | ABC
-    (1 row)
-
-    mytest=> 
-    # End session with control-D.
 
 
 OpenShift
@@ -308,10 +267,51 @@ Beside adding the Monk package as a dependency in `package.json`, we also see th
 
 See the rest of `server.js` for how the database handle `db` is used.
 
+
+Appendix: PostgreSQL
+====================
+
+**This section is optional.  We won't require PostgreSQL for any of the projects, but you may want to consider it for your final project!**
+
+[PostgreSQL](http://www.postgresql.org/) is a representative of a more traditional class of *relational* database engines based on a language family called SQL.
+
+The PostgreSQL web site has a [a page of downloading instructions](http://www.postgresql.org/download/).
+
+In Debian-flavored Linux, installation just requires running:
+
+    sudo apt-get install postgresql
+
+Simple acceptance test
+----------------------
+
+After proper installation, you should have a database server running locally.  To test it from a UNIX-style command-line interface, try the following.  The `#` lines are comments and shouldn't be run.
+
+    # First, create a PostgreSQL account for your UNIX user.
+    # It's necessary to become the database admin user to do so.
+    $ sudo -u postgres createuser --createdb --no-superuser --no-createrole `whoami`
+    # Now create a database, as your own user.
+    $ createdb mytest
+    # Open a command-line connection to your database.
+    $ psql mytest
+    psql (9.1.14)
+    Type "help" for help.
+    
+    # Now a quick interaction to make sure everything is working.
+    mytest=> CREATE TABLE foo (baz INTEGER, bar TEXT);
+    CREATE TABLE
+    mytest=> INSERT INTO foo (baz, bar) VALUES (1, 'ABC');
+    INSERT 0 1
+    mytest=> SELECT * FROM foo;
+     baz | bar 
+    -----+-----
+       1 | ABC
+    (1 row)
+
+    mytest=> 
+    # End session with control-D.
+
 PostgreSQL on OpenShift
 -----------------------
-
-**This section is also optional, in case you decide to use PostgreSQL in your final project.**
 
 There's another template for apps using PostgreSQL.
 
